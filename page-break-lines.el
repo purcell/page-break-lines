@@ -55,7 +55,7 @@
   :type '(repeat symbol)
   :group 'page-break-lines)
 
-(defface page-break-lines-face
+(defface page-break-lines
   '((t :inherit font-lock-comment-face :bold nil :italic nil))
   "Face used to colorize page break lines.
 If using :bold or :italic, please ensure `page-break-lines-char'
@@ -76,7 +76,7 @@ its display table will be modified as necessary."
             (setq buffer-display-table (make-display-table)))
           (aset buffer-display-table ?\^L
                 (vconcat (mapcar (lambda (c)
-                       (make-glyph-code c 'page-break-lines-face))
+                       (make-glyph-code c 'page-break-lines))
                      (make-list (1- (window-width window))
                                 page-break-lines-char)))))
       (when buffer-display-table
