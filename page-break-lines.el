@@ -125,6 +125,7 @@ When `major-mode' is listed in `page-break-lines-modes', then
            (memq major-mode page-break-lines-modes))
       (page-break-lines-mode 1)))
 
+;;;###autoload
 (define-global-minor-mode global-page-break-lines-mode
   page-break-lines-mode page-break-lines-mode-maybe
   :group 'page-break-lines)
