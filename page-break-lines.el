@@ -78,9 +78,9 @@ its display table will be modified as necessary."
             (setq buffer-display-table (make-display-table)))
           (aset buffer-display-table ?\^L
                 (vconcat (mapcar (lambda (c)
-                       (make-glyph-code c 'page-break-lines))
-                     (make-list (1- (window-width window))
-                                page-break-lines-char)))))
+                                   (make-glyph-code c 'page-break-lines))
+                                 (make-list (1- (window-width window))
+                                            page-break-lines-char)))))
       (when buffer-display-table
         (aset buffer-display-table ?\^L nil)))))
 
