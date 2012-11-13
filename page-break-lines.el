@@ -32,11 +32,13 @@
 ;; or customize `page-break-lines-modes' and enable the mode globally with
 ;; `global-page-break-lines-mode'.
 
-;; Adapted from http://www.emacswiki.org/emacs/PageBreaks
+;; Issues and limitations:
 
-;; Known issues:
-;; * fill-column-indicator.el does not work properly when page-break-lines-mode
-;;   is enabled.
+;; If `page-break-lines-char' is a different width to regular
+;; characters, the rule may be either too short or too long: rules may
+;; wrap if `truncate-lines' is nil.
+
+;; Adapted from code http://www.emacswiki.org/emacs/PageBreaks
 
 ;;; Code:
 
