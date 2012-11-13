@@ -92,11 +92,11 @@ horizontal line of `page-break-string-char' characters."
 		 'page-break-lines--update-display-tables)))
 
 ;;;###autoload
-(defun turn-on-page-break-mode ()
+(defun turn-on-page-break-lines-mode ()
   (page-break-lines-mode 1))
 
 ;;;###autoload
-(defun turn-off-page-break-mode ()
+(defun turn-off-page-break-lines-mode ()
   (page-break-lines-mode -1))
 
 
