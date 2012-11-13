@@ -25,10 +25,14 @@
 ;; This library provides a global mode which displays form feed
 ;; characters as horizontal rules.
 
-;; Adapted from http://www.emacswiki.org/emacs/PageBreaks
+;; Install from Melpa or Marmalade, or add to `load-path' and use
+;; (require 'page-break-lines).
 
-;; TODO:
-;; * Allow selective enabling/disabling in certain modes
+;; Use `page-break-lines-mode' to enable the mode in specific buffers,
+;; or customize `page-break-lines-modes' and enable the mode globally with
+;; `global-page-break-lines-mode'.
+
+;; Adapted from http://www.emacswiki.org/emacs/PageBreaks
 
 ;; Known issues:
 ;; * fill-column-indicator.el does not work properly when page-break-lines-mode
@@ -43,6 +47,12 @@
 
 (defcustom page-break-lines-char ?─
   "Character used to render page break lines."
+  :type 'character
+  :group 'page-break-lines)
+
+(defcustom page-break-lines-modes '(emacs-lisp-mode compilation-mode)
+  "Modes in which to enable `page-break-lines-mode'."
+  :type '(repeat symbol)
   :group 'page-break-lines)
 
 (defface page-break-lines-face
@@ -53,22 +63,24 @@ is available in that variant of your font, otherwise it may be
 displayed as a junk character."
   :group 'page-break-lines)
 
-(defun page-break-lines--make-display-table-entry (window)
-  "Make an appropriate display table entry for form feeds."
-  (when page-break-lines-mode
-    (vconcat (mapcar (lambda (c)
+
+
+(defun page-break-lines--update-display-table (window)
+  "Modify a display-table that displays page-breaks prettily.
+If the buffer inside WINDOW has `page-break-lines-mode' enabled,
+its display table will be modified as necessary."
+  (with-current-buffer (window-buffer window)
+    (if page-break-lines-mode
+        (progn
+          (unless buffer-display-table
+            (setq buffer-display-table (make-display-table)))
+          (aset buffer-display-table ?\^L
+                (vconcat (mapcar (lambda (c)
                        (make-glyph-code c 'page-break-lines-face))
                      (make-list (1- (window-width window))
                                 page-break-lines-char)))))
-
-(defun page-break-lines--update-display-table (window)
-  "Create a display-table that displays page-breaks prettily."
-  (set-window-display-table
-     window
-     (let ((table (or (copy-sequence (window-display-table window))
-                      (make-display-table))))
-       (aset table ?\^L (page-break-lines--make-display-table-entry window))
-       table)))
+      (when buffer-display-table
+        (aset buffer-display-table ?\^L nil)))))
 
 (defun page-break-lines--update-display-tables  ()
   "Function called for updating display table."
@@ -82,22 +94,38 @@ displayed as a junk character."
 
 In Page Break mode, page breaks (^L characters) are displayed as a
 horizontal line of `page-break-string-char' characters."
-  :global t
   :lighter " PgLn"
-  (page-break-lines--update-display-tables)
-  (if page-break-lines-mode
-      (add-hook 'window-configuration-change-hook
-		'page-break-lines--update-display-tables)
-    (remove-hook 'window-configuration-change-hook
-		 'page-break-lines--update-display-tables)))
+  :group 'page-break-lines
+  (page-break-lines--update-display-tables))
 
 ;;;###autoload
 (defun turn-on-page-break-lines-mode ()
+  "Enable `page-break-lines-mode' in this buffer."
   (page-break-lines-mode 1))
 
 ;;;###autoload
 (defun turn-off-page-break-lines-mode ()
+  "Disable `page-break-lines-mode' in this buffer."
   (page-break-lines-mode -1))
+
+
+(add-hook 'window-configuration-change-hook
+          'page-break-lines--update-display-tables)
+
+
+
+;;;###autoload
+(defun page-break-lines-mode-maybe ()
+  "Enable `page-break-lines-mode' in the current buffer if desired.
+When `major-mode' is listed in `page-break-lines-modes', then
+`page-break-lines-mode' will be enabled."
+  (if (and (not (minibufferp (current-buffer)))
+           (memq major-mode page-break-lines-modes))
+      (page-break-lines-mode 1)))
+
+(define-global-minor-mode global-page-break-lines-mode
+  page-break-lines-mode page-break-lines-mode-maybe
+  :group 'page-break-lines)
 
 
 (provide 'page-break-lines)
