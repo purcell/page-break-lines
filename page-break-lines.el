@@ -43,7 +43,7 @@
 ;;; Code:
 
 (defgroup page-break-lines nil
-  "Displaying page breaks as horizontal rules."
+  "Display ugly ^L page breaks as tidy horizontal lines."
   :prefix "page-break-lines-"
   :group 'faces)
 
