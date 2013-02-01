@@ -52,7 +52,7 @@
   :type 'character
   :group 'page-break-lines)
 
-(defcustom page-break-lines-modes '(emacs-lisp-mode compilation-mode)
+(defcustom page-break-lines-modes '(emacs-lisp-mode compilation-mode outline-mode)
   "Modes in which to enable `page-break-lines-mode'."
   :type '(repeat symbol)
   :group 'page-break-lines)
