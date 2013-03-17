@@ -122,7 +122,7 @@ horizontal line of `page-break-string-char' characters."
 When `major-mode' is listed in `page-break-lines-modes', then
 `page-break-lines-mode' will be enabled."
   (if (and (not (minibufferp (current-buffer)))
-           (memq major-mode page-break-lines-modes))
+           (apply 'derived-mode-p page-break-lines-modes))
       (page-break-lines-mode 1)))
 
 ;;;###autoload
