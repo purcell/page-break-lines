@@ -34,9 +34,18 @@
 
 ;; Issues and limitations:
 
-;; If `page-break-lines-char' is a different width to regular
-;; characters, the rule may be either too short or too long: rules may
-;; wrap if `truncate-lines' is nil.
+;; If `page-break-lines-char' is displayed at a different width to
+;; regular characters, the rule may be either too short or too long:
+;; rules may then wrap if `truncate-lines' is nil. On some systems,
+;; Emacs may erroneously choose a different font for the page break
+;; symbol, which choice can be overridden using code such as:
+
+;; (set-fontset-font "fontset-default"
+;;                   (cons page-break-lines-char page-break-lines-char)
+;;                   (face-attribute 'default :family))
+
+;; Use `describe-char' on a page break char to determine whether this
+;; is the case.
 
 ;; Adapted from code http://www.emacswiki.org/emacs/PageBreaks
 
