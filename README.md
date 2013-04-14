@@ -17,7 +17,9 @@ Usage
 
 Enable `page-break-lines-mode` in an individual buffer like this:
 
-     (turn-on-page-break-lines-mode)
+```lisp
+(turn-on-page-break-lines-mode)
+```
 
 Alternatively, customize `page-break-lines-modes` and enable the mode globally with
 `global-page-break-lines-mode`.
