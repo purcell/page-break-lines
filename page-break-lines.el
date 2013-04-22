@@ -47,6 +47,12 @@
 ;; Use `describe-char' on a page break char to determine whether this
 ;; is the case.
 
+;; Additionally, the use of `text-scale-increase' or
+;; `text-scale-decrease' will cause the rule width to be incorrect,
+;; because the reported window width (in characters) will continue to
+;; be the width in the frame's default font, not the scaled font used to
+;; display the rule.
+
 ;; Adapted from code http://www.emacswiki.org/emacs/PageBreaks
 
 ;;; Code:
