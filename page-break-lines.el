@@ -151,7 +151,7 @@ When `major-mode' is listed in `page-break-lines-modes', then
 ;; Local Variables:
 ;; coding: utf-8
 ;; byte-compile-warnings: (not cl-functions)
-;; eval: (checkdoc-minor-mode 1)
+;; checkdoc-minor-mode: t
 ;; End:
 
 ;;; page-break-lines.el ends here
