@@ -136,7 +136,7 @@ horizontal line of `page-break-string-char' characters."
   "Enable `page-break-lines-mode' in the current buffer if desired.
 When `major-mode' is listed in `page-break-lines-modes', then
 `page-break-lines-mode' will be enabled."
-  (if (and (not (minibufferp (current-buffer)))
+  (if (and (not (minibufferp))
            (apply 'derived-mode-p page-break-lines-modes))
       (page-break-lines-mode 1)))
 
