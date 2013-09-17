@@ -96,7 +96,7 @@ its display table will be modified as necessary."
                 (vconcat (mapcar (lambda (c)
                                    (make-glyph-code c 'page-break-lines))
                                  (make-list (- (window-width window)
-                                               (if word-wrap 1 0))
+                                               (if (or word-wrap (null window-system)) 1 0))
                                             page-break-lines-char)))))
       (when buffer-display-table
         (aset buffer-display-table ?\^L nil)))))
