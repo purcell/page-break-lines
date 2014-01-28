@@ -89,14 +89,13 @@ If the buffer inside WINDOW has `page-break-lines-mode' enabled,
 its display table will be modified as necessary."
   (with-current-buffer (window-buffer window)
     (if page-break-lines-mode
-        (progn
+        (let ((width (- (window-width window) 1)))
           (unless buffer-display-table
             (setq buffer-display-table (make-display-table)))
           (aset buffer-display-table ?\^L
                 (vconcat (mapcar (lambda (c)
                                    (make-glyph-code c 'page-break-lines))
-                                 (make-list (- (window-width window)
-                                               (if (or word-wrap (null window-system)) 1 0))
+                                 (make-list width
                                             page-break-lines-char)))))
       (when buffer-display-table
         (aset buffer-display-table ?\^L nil)))))
