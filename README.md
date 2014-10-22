@@ -1,3 +1,6 @@
+[![Melpa Status](http://melpa.milkbox.net/packages/page-break-lines-badge.svg)](http://melpa.milkbox.net/#/page-break-lines)
+[![Melpa Stable Status](http://melpa-stable.milkbox.net/packages/page-break-lines-badge.svg)](http://melpa-stable.milkbox.net/#/page-break-lines)
+
 page-break-lines.el
 ===================
 
