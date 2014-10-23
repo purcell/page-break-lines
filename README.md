@@ -1,5 +1,5 @@
-[![Melpa Status](http://melpa.milkbox.net/packages/page-break-lines-badge.svg)](http://melpa.milkbox.net/#/page-break-lines)
-[![Melpa Stable Status](http://melpa-stable.milkbox.net/packages/page-break-lines-badge.svg)](http://melpa-stable.milkbox.net/#/page-break-lines)
+[![Melpa Status](http://melpa.org/packages/page-break-lines-badge.svg)](http://melpa.org/#/page-break-lines)
+[![Melpa Stable Status](http://stable.melpa.org/packages/page-break-lines-badge.svg)](http://stable.melpa.org/#/page-break-lines)
 
 page-break-lines.el
 ===================
@@ -47,7 +47,7 @@ is the case.
 
 
 [marmalade]: http://marmalade-repo.org
-[melpa]: http://melpa.milkbox.net
+[melpa]: http://melpa.org
 
 <hr>
 
