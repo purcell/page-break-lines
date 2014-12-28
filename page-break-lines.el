@@ -83,29 +83,6 @@ displayed as a junk character."
 
 
 
-(defun page-break-lines--update-display-table (window)
-  "Modify a display-table that displays page-breaks prettily.
-If the buffer inside WINDOW has `page-break-lines-mode' enabled,
-its display table will be modified as necessary."
-  (with-current-buffer (window-buffer window)
-    (if page-break-lines-mode
-        (let ((width (- (window-width window) 1)))
-          (unless buffer-display-table
-            (setq buffer-display-table (make-display-table)))
-          (aset buffer-display-table ?\^L
-                (vconcat (mapcar (lambda (c)
-                                   (make-glyph-code c 'page-break-lines))
-                                 (make-list width
-                                            page-break-lines-char)))))
-      (when buffer-display-table
-        (aset buffer-display-table ?\^L nil)))))
-
-(defun page-break-lines--update-display-tables  ()
-  "Function called for updating display table."
-  (mapc 'page-break-lines--update-display-table (window-list nil 'no-minibuffer)))
-
-
-
 ;;;###autoload
 (define-minor-mode page-break-lines-mode
   "Toggle Page Break Lines mode.
@@ -129,6 +106,29 @@ horizontal line of `page-break-string-char' characters."
 
 (add-hook 'window-configuration-change-hook
           'page-break-lines--update-display-tables)
+
+
+
+(defun page-break-lines--update-display-table (window)
+  "Modify a display-table that displays page-breaks prettily.
+If the buffer inside WINDOW has `page-break-lines-mode' enabled,
+its display table will be modified as necessary."
+  (with-current-buffer (window-buffer window)
+    (if page-break-lines-mode
+        (let ((width (- (window-width window) 1)))
+          (unless buffer-display-table
+            (setq buffer-display-table (make-display-table)))
+          (aset buffer-display-table ?\^L
+                (vconcat (mapcar (lambda (c)
+                                   (make-glyph-code c 'page-break-lines))
+                                 (make-list width
+                                            page-break-lines-char)))))
+      (when buffer-display-table
+        (aset buffer-display-table ?\^L nil)))))
+
+(defun page-break-lines--update-display-tables  ()
+  "Function called for updating display table."
+  (mapc 'page-break-lines--update-display-table (window-list nil 'no-minibuffer)))
 
 
 
