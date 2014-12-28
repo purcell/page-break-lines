@@ -7,6 +7,11 @@ page-break-lines.el
 This Emacs library provides a global mode which displays ugly form feed
 characters as tidy horizontal rules.
 
+Screenshot
+==========
+
+![page-break-lines screenshot](screenshot.png)
+
 Installation
 =============
 
