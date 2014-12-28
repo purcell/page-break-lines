@@ -1,6 +1,6 @@
 ;;; page-break-lines.el --- Display ugly ^L page breaks as tidy horizontal lines
 
-;; Copyright (C) 2012 Steve Purcell
+;; Copyright (C) 2012-2015 Steve Purcell
 
 ;; Author: Steve Purcell <steve@sanityinc.com>
 ;; URL: https://github.com/purcell/page-break-lines
