@@ -50,6 +50,10 @@ symbol, which choice can be overridden using code such as:
 Use `describe-char` on a page break char to determine whether this
 is the case.
 
+Also see Vasilij Schneidermann's
+[form-feed package](https://github.com/wasamasa/form-feed), which
+works using font-lock instead of glyph composition, and therefore has
+different display trade-offs.
 
 [marmalade]: http://marmalade-repo.org
 [melpa]: http://melpa.org
