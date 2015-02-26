@@ -4,7 +4,7 @@
 
 ;; Author: Steve Purcell <steve@sanityinc.com>
 ;; URL: https://github.com/purcell/page-break-lines
-;; Version: DEV
+;; Package-Version: DEV
 ;; Keywords: convenience, faces
 
 ;; This program is free software; you can redistribute it and/or modify
