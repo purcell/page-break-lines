@@ -104,8 +104,9 @@ horizontal line of `page-break-string-char' characters."
   (page-break-lines-mode -1))
 
 
-(add-hook 'window-configuration-change-hook
-          'page-break-lines--update-display-tables)
+(dolist (hook '(window-configuration-change-hook
+                after-setting-font-hook))
+  (add-hook hook 'page-break-lines--update-display-tables))
 
 
 
