@@ -67,6 +67,11 @@
   :type 'character
   :group 'page-break-lines)
 
+(defcustom page-break-lines-lighter " PgLn"
+  "Mode-line indicator for `page-break-lines-mode'."
+  :type '(choice (const :tag "No lighter" "") string)
+  :group 'page-break-lines)
+
 (defcustom page-break-lines-modes
   '(emacs-lisp-mode lisp-mode scheme-mode compilation-mode outline-mode help-mode)
   "Modes in which to enable `page-break-lines-mode'."
@@ -89,7 +94,7 @@ displayed as a junk character."
 
 In Page Break mode, page breaks (^L characters) are displayed as a
 horizontal line of `page-break-string-char' characters."
-  :lighter " PgLn"
+  :lighter page-break-lines-lighter
   :group 'page-break-lines
   (page-break-lines--update-display-tables))
 
