@@ -110,6 +110,7 @@ horizontal line of `page-break-string-char' characters."
 
 
 (dolist (hook '(window-configuration-change-hook
+                window-size-change-functions
                 after-setting-font-hook))
   (add-hook hook 'page-break-lines--update-display-tables))
 
@@ -132,9 +133,9 @@ its display table will be modified as necessary."
       (when buffer-display-table
         (aset buffer-display-table ?\^L nil)))))
 
-(defun page-break-lines--update-display-tables  ()
-  "Function called for updating display table."
-  (mapc 'page-break-lines--update-display-table (window-list nil 'no-minibuffer)))
+(defun page-break-lines--update-display-tables  (&optional frame)
+  "Function called for updating display table in windows of FRAME."
+  (mapc 'page-break-lines--update-display-table (window-list frame 'no-minibuffer)))
 
 
 
