@@ -125,11 +125,13 @@ its display table will be modified as necessary."
         (progn
           (unless buffer-display-table
             (setq buffer-display-table (make-display-table)))
-          (let* ((width (- (window-width window) 1))
-                 (glyph (make-glyph-code page-break-lines-char 'page-break-lines))
-                 (new-display-entry (vconcat (make-list width glyph))))
-            (unless (equal new-display-entry (elt buffer-display-table ?\^L))
-              (aset buffer-display-table ?\^L new-display-entry))))
+          (let ((default-height (face-attribute 'default :height nil 'default)))
+            (set-face-attribute 'page-break-lines nil :height default-height)
+            (let* ((width (- (window-width window) 1))
+                   (glyph (make-glyph-code page-break-lines-char 'page-break-lines))
+                   (new-display-entry (vconcat (make-list width glyph))))
+              (unless (equal new-display-entry (elt buffer-display-table ?\^L))
+                (aset buffer-display-table ?\^L new-display-entry)))))
       (when buffer-display-table
         (aset buffer-display-table ?\^L nil)))))
 
