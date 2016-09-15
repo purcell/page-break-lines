@@ -16,7 +16,7 @@ Installation
 =============
 
 If you choose not to use one of the convenient
-packages in [Melpa][melpa] and [Marmalade][marmalade], you'll need to
+packages in [MELPA][melpa], you'll need to
 add the directory containing `page-break-lines.el` to your `load-path`, and
 then `(require 'page-break-lines)`.
 
@@ -55,7 +55,6 @@ Also see Vasilij Schneidermann's
 works using font-lock instead of glyph composition, and therefore has
 different display trade-offs.
 
-[marmalade]: http://marmalade-repo.org
 [melpa]: http://melpa.org
 
 <hr>
