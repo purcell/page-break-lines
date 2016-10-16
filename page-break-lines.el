@@ -99,15 +99,7 @@ horizontal line of `page-break-string-char' characters."
   (page-break-lines--update-display-tables))
 
 ;;;###autoload
-(defun turn-on-page-break-lines-mode ()
-  "Enable `page-break-lines-mode' in this buffer."
-  (page-break-lines-mode 1))
-
-;;;###autoload
-(defun turn-off-page-break-lines-mode ()
-  "Disable `page-break-lines-mode' in this buffer."
-  (page-break-lines-mode -1))
-
+(define-obsolete-function-alias 'turn-on-page-break-lines-mode 'page-break-lines-mode)
 
 (dolist (hook '(window-configuration-change-hook
                 window-size-change-functions
