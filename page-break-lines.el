@@ -1,10 +1,10 @@
-;;; page-break-lines.el --- Display ugly ^L page breaks as tidy horizontal lines
+;;; page-break-lines.el --- Display ^L page breaks as tidy horizontal lines
 
 ;; Copyright (C) 2012-2015 Steve Purcell
 
 ;; Author: Steve Purcell <steve@sanityinc.com>
 ;; URL: https://github.com/purcell/page-break-lines
-;; Package-Version: DEV
+;; Package-Version: 0
 ;; Keywords: convenience, faces
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -159,6 +159,7 @@ When `major-mode' is listed in `page-break-lines-modes', then
 ;;;###autoload
 (define-global-minor-mode global-page-break-lines-mode
   page-break-lines-mode page-break-lines-mode-maybe
+  :require 'page-break-lines
   :group 'page-break-lines)
 
 
