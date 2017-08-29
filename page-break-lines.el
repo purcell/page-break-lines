@@ -36,7 +36,7 @@
 
 ;; If `page-break-lines-char' is displayed at a different width to
 ;; regular characters, the rule may be either too short or too long:
-;; rules may then wrap if `truncate-lines' is nil. On some systems,
+;; rules may then wrap if `truncate-lines' is nil.  On some systems,
 ;; Emacs may erroneously choose a different font for the page break
 ;; symbol, which choice can be overridden using code such as:
 
