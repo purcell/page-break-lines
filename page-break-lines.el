@@ -168,7 +168,6 @@ When `major-mode' is listed in `page-break-lines-modes', then
 
 ;; Local Variables:
 ;; coding: utf-8
-;; byte-compile-warnings: (not cl-functions)
 ;; checkdoc-minor-mode: t
 ;; End:
 
