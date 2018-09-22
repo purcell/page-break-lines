@@ -141,10 +141,10 @@ its display table will be modified as necessary."
                    buffer-display-table)
           (aset buffer-display-table ?\^L nil))))))
 
-(defun page-break-lines--update-display-tables  (&optional frame)
-  "Function called for updating display table in windows of FRAME."
+(defun page-break-lines--update-display-tables  (&optional _)
+  "Function called for updating display table in windows of current selected frame."
   (unless (minibufferp)
-    (mapc 'page-break-lines--update-display-table (window-list frame 'no-minibuffer))))
+    (mapc 'page-break-lines--update-display-table (window-list nil 'no-minibuffer))))
 
 
 
