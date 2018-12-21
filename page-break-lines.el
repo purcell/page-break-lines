@@ -137,7 +137,7 @@ its display table will be modified as necessary."
                      (new-display-entry (vconcat (make-list width glyph))))
                 (unless (equal new-display-entry (elt buffer-display-table ?\^L))
                   (aset buffer-display-table ?\^L new-display-entry)))))
-        (when (and (member major-mode page-break-lines-modes)
+        (when (and (apply 'derived-mode-p page-break-lines-modes)
                    buffer-display-table)
           (aset buffer-display-table ?\^L nil))))))
 
