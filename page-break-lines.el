@@ -98,7 +98,7 @@ displayed as a junk character."
   "Toggle Page Break Lines mode.
 
 In Page Break mode, page breaks (^L characters) are displayed as a
-horizontal line of `page-break-string-char' characters."
+horizontal line of `page-break-lines-char' characters."
   :lighter page-break-lines-lighter
   :group 'page-break-lines
   (page-break-lines--update-display-tables))
