@@ -26,7 +26,7 @@ Usage
 
 Enable `page-break-lines-mode` in an individual buffer like this:
 
-```lisp
+```elisp
 (turn-on-page-break-lines-mode)
 ```
 
@@ -42,7 +42,7 @@ rules may then wrap if `truncate-lines` is nil. On some systems,
 Emacs may erroneously choose a different font for the page break
 symbol, which choice can be overridden using code such as:
 
-```lisp
+```elisp
 (set-fontset-font "fontset-default"
                   (cons page-break-lines-char page-break-lines-char)
                   (face-attribute 'default :family))
