@@ -63,33 +63,28 @@
   :prefix "page-break-lines-"
   :group 'faces)
 
-;;;###autoload
 (defcustom page-break-lines-char ?─
   "Character used to render page break lines."
   :type 'character
   :group 'page-break-lines)
 
-;;;###autoload
 (defcustom page-break-lines-lighter " PgLn"
   "Mode-line indicator for `page-break-lines-mode'."
   :type '(choice (const :tag "No lighter" "") string)
   :group 'page-break-lines)
 
-;;;###autoload
 (defcustom page-break-lines-max-width nil
   "If non-nil, maximum width (in characters) of page break indicator.
 If nil, indicator will span the width of the frame."
   :type '(choice integer (const :tag "Full width" nil))
   :group 'page-break-lines)
 
-;;;###autoload
 (defcustom page-break-lines-modes
   '(emacs-lisp-mode lisp-mode scheme-mode compilation-mode outline-mode help-mode)
   "Modes in which to enable `page-break-lines-mode'."
   :type '(repeat symbol)
   :group 'page-break-lines)
 
-;;;###autoload
 (defface page-break-lines
   '((t :inherit font-lock-comment-face :bold nil :italic nil))
   "Face used to colorize page break lines.
