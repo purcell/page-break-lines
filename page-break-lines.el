@@ -1,4 +1,4 @@
-;;; page-break-lines.el --- Display ^L page breaks as tidy horizontal lines
+;;; page-break-lines.el --- Display ^L page breaks as tidy horizontal lines  -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2012-2015 Steve Purcell
 
