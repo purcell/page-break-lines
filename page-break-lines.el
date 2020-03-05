@@ -142,10 +142,10 @@ its display table will be modified as necessary."
                      (glyph (make-glyph-code page-break-lines-char 'page-break-lines))
                      (new-display-entry (vconcat (make-list width glyph))))
                 (unless (equal new-display-entry (elt buffer-display-table ?\^L))
-                  (set-display-table-slot buffer-display-table ?\^L new-display-entry)))))
+                  (aset buffer-display-table ?\^L new-display-entry)))))
         (when (and (apply 'derived-mode-p page-break-lines-modes)
                    buffer-display-table)
-          (set-display-table-slot buffer-display-table ?\^L nil))))))
+          (aset buffer-display-table ?\^L nil))))))
 
 (defun page-break-lines--update-display-tables  (&optional frame)
   "Function called for updating display table in windows of FRAME."
