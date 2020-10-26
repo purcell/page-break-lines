@@ -18,7 +18,7 @@ Installation
 =============
 
 If you choose not to use one of the convenient
-packages in [MELPA][https://melpa.org], you'll need to
+packages in [MELPA](https://melpa.org), you'll need to
 add the directory containing `page-break-lines.el` to your `load-path`, and
 then `(require 'page-break-lines)`.
 
