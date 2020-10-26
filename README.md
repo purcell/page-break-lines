@@ -34,7 +34,7 @@ Enable `page-break-lines-mode` in an individual buffer like this:
 Alternatively, customize `page-break-lines-modes` and enable the mode globally with
 `global-page-break-lines-mode`.
 
-Note that Emacs already supports [“Pages”][https://www.gnu.org/software/emacs/manual/html_node/emacs/Pages.html]
+Note that Emacs already supports [“Pages”](https://www.gnu.org/software/emacs/manual/html_node/emacs/Pages.html)
 and jumping around between page breaks with `C-x [` (`backward-page`)
 and `C-x ]` (`forward-page`).
 
