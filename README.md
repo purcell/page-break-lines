@@ -1,5 +1,5 @@
-[![Melpa Status](http://melpa.org/packages/page-break-lines-badge.svg)](http://melpa.org/#/page-break-lines)
-[![Melpa Stable Status](http://stable.melpa.org/packages/page-break-lines-badge.svg)](http://stable.melpa.org/#/page-break-lines)
+[![Melpa Status](https://melpa.org/packages/page-break-lines-badge.svg)](https://melpa.org/#/page-break-lines)
+[![Melpa Stable Status](https://stable.melpa.org/packages/page-break-lines-badge.svg)](https://stable.melpa.org/#/page-break-lines)
 [![Build Status](https://github.com/purcell/page-break-lines/workflows/CI/badge.svg)](https://github.com/purcell/page-break-lines/actions)
 <a href="https://www.patreon.com/sanityinc"><img alt="Support me" src="https://img.shields.io/badge/Support%20Me-%F0%9F%92%97-ff69b4.svg"></a>
 
@@ -18,7 +18,7 @@ Installation
 =============
 
 If you choose not to use one of the convenient
-packages in [MELPA][melpa], you'll need to
+packages in [MELPA][https://melpa.org], you'll need to
 add the directory containing `page-break-lines.el` to your `load-path`, and
 then `(require 'page-break-lines)`.
 
@@ -34,9 +34,9 @@ Enable `page-break-lines-mode` in an individual buffer like this:
 Alternatively, customize `page-break-lines-modes` and enable the mode globally with
 `global-page-break-lines-mode`.
 
-Note that Emacs already supports [“Pages”][pages] and jumping around
-between page breaks with `C-x [` (`backward-page`) and `C-x ]`
-(`forward-page`).
+Note that Emacs already supports [“Pages”][https://www.gnu.org/software/emacs/manual/html_node/emacs/Pages.html]
+and jumping around between page breaks with `C-x [` (`backward-page`)
+and `C-x ]` (`forward-page`).
 
 Issues and limitations
 ======================
@@ -61,14 +61,13 @@ Also see Vasilij Schneidermann's
 works using font-lock instead of glyph composition, and therefore has
 different display trade-offs.
 
-[melpa]: http://melpa.org
 
 <hr>
 
-[![](http://api.coderwall.com/purcell/endorsecount.png)](http://coderwall.com/purcell)
+[💝 Support this project and my other Open Source work](https://www.patreon.com/sanityinc)
 
-[![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://uk.linkedin.com/in/stevepurcell)
+[💼 LinkedIn profile](https://uk.linkedin.com/in/stevepurcell)
 
-[Steve Purcell's blog](http://www.sanityinc.com/) // [@sanityinc on Twitter](https://twitter.com/sanityinc)
+[✍ sanityinc.com](http://www.sanityinc.com/)
 
-[pages](https://www.gnu.org/software/emacs/manual/html_node/emacs/Pages.html)
+[🐦 @sanityinc](https://twitter.com/sanityinc)
