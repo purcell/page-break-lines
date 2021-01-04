@@ -105,9 +105,6 @@ horizontal line of `page-break-lines-char' characters."
   :group 'page-break-lines
   (page-break-lines--update-display-tables))
 
-;;;###autoload
-(define-obsolete-function-alias 'turn-on-page-break-lines-mode 'page-break-lines-mode)
-
 (dolist (hook '(window-configuration-change-hook
                 window-size-change-functions
                 after-setting-font-hook
