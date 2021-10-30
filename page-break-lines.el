@@ -131,6 +131,8 @@ its display table will be modified as necessary."
                                              (fboundp 'line-number-display-width))
                                         (line-number-display-width t)
                                       0)))
+                     (internal-border-width (or (alist-get 'internal-border-width default-frame-alist) 0))
+                     (wwidth-pix (- wwidth-pix (/ internal-border-width 2)))
                      (width (- (/ wwidth-pix (frame-char-width) cwidth)
                                (if (display-graphic-p) 0 1)))
                      (width (if page-break-lines-max-width
