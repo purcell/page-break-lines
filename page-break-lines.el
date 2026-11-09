@@ -128,7 +128,9 @@ its display table will be modified as necessary."
                                             (/ (float (string-pixel-width (make-string 100 page-break-lines-char)))
                                                (string-pixel-width (make-string 100 ?a)))
                                           (char-width page-break-lines-char)))
-                   (width (floor (max 0 (window-max-chars-per-line window)) char-relative-width))
+                   ;; `window-max-chars-per-line' selects WINDOW, which can move point.
+                   (width (floor (max 0 (save-excursion (window-max-chars-per-line window)))
+                                 char-relative-width))
                    (width (if page-break-lines-max-width
                               (min width page-break-lines-max-width)
                             width))
